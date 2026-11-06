@@ -1,0 +1,16 @@
+{
+  "issue_id": "ISSUE-001",
+  "command": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3 -m pytest -q tests/test_cart.py::test_subtotal_includes_first_item",
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "/Applications/Xcode.app/Contents/Developer/usr/bin/python3: No module named pytest\n",
+  "root_cause": "subtotal starts its loop at index 1, omitting the first price",
+  "approval": {
+    "approved": false,
+    "recorded_at_utc": null
+  },
+  "fix": {
+    "applied": false,
+    "reason": "No human approval was supplied; source was left unchanged."
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "issue_id": "ISSUE-001",
+  "title": "Cart subtotal omits the first item",
+  "description": "A bug blocks correct checkout totals when a cart contains more than one item.\n\nReproduction:\n- Add an item priced at 12.50\n- Add a second item priced at 3.25\n- Read the cart subtotal\n\nExpected: 15.75\nActual: 3.25"
+}

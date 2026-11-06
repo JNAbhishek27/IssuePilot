@@ -1,0 +1,25 @@
+flowchart LR
+    Dev[Developer]
+    Room[Shared Switch room<br/>report · handoff · evidence · approval]
+    Triage[IssuePilot-Triage<br/>classify and structure]
+    Repro[IssuePilot-Repro<br/>investigate and propose]
+    Repo[Sample Python repository<br/>seeded cart bug + pytest cases]
+    Human[Human reviewer<br/>explicit approval required]
+    Result[Resolution summary<br/>test output + root cause]
+    Local[Local demo runner<br/>scripts/demo.py]
+
+    Dev -->|posts issue| Room
+    Room --> Triage
+    Triage -->|report and bug handoff| Room
+    Room --> Repro
+    Repro -->|inspect and run focused test| Repo
+    Repo -->|command output| Repro
+    Repro -->|cause + proposed change| Room
+    Room --> Human
+    Human -->|issue-bound approval| Room
+    Room -->|approval before edit| Repro
+    Repro -->|approved fix + tests| Repo
+    Repro --> Result
+    Result --> Room
+    Local -.->|local reproduction path; separate from Switch| Triage
+    Local -.-> Repo

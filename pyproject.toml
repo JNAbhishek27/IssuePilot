@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "issuepilot"
+version = "0.1.0"
+description = "A Switch-room-driven collaborative bug triage and investigation demo"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+api = ["fastapi>=0.110", "uvicorn>=0.27"]
+test = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+include = ["issuepilot*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

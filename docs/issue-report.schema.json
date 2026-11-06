@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IssuePilot Issue Report",
+  "type": "object",
+  "required": ["issue_id", "title", "description", "kind", "severity", "component", "reproduction_steps", "expected", "actual", "status"],
+  "properties": {
+    "issue_id": {"type": "string"},
+    "title": {"type": "string"},
+    "description": {"type": "string"},
+    "kind": {"enum": ["bug", "question", "feature_request"]},
+    "severity": {"enum": ["critical", "high", "medium", "low", "unknown"]},
+    "component": {"type": "string"},
+    "reproduction_steps": {"type": "array", "items": {"type": "string"}},
+    "expected": {"type": "string"},
+    "actual": {"type": "string"},
+    "status": {"type": "string"}
+  },
+  "additionalProperties": false
+}
